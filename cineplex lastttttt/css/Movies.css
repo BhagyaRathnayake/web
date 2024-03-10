@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #FFF;
+    background-color: #000000;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.nav,
+.nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    justify-content: space-between;
+}
+
+.ab {
+    padding: 10px 15px;
+}
+
+.ab:hover {
+    background-color: rgb(31, 30, 30);
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav .logo img {
+    width: 140px;
+    height: 40px;
+}
+
+.nav .nav-links {
+    column-gap: 20px;
+    list-style: none;
+}
+
+.nav .nav-links a {
+    transition: all 0.2s linear;
+}
+
+.nav.openSearch .nav-links a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav .search-icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav .search-box {
+    position: absolute;
+    right: 250px;
+    height: 45px;
+    max-width: 555px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s linear;
+}
+
+.nav.openSearch .search-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    left: 15px;
+    color: #4a98f7;
+    transform: translateY(-50%);
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+    display: none;
+}
+
+/* responsive */
+@media screen and (max-width: 1160px) {
+    .nav {
+        padding: 15px 100px;
+    }
+
+    .nav .search-box {
+        right: 150px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .nav {
+        padding: 15px 50px;
+    }
+
+    .nav .search-box {
+        right: 100px;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav .navOpenBtn,
+    .nav .navCloseBtn {
+        display: block;
+    }
+
+    .nav {
+        padding: 15px 20px;
+    }
+
+    .nav .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        max-width: 280px;
+        width: 100%;
+        padding-top: 100px;
+        row-gap: 30px;
+        flex-direction: column;
+        background-color: #11101d;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        z-index: 100;
+    }
+
+    .nav.openNav .nav-links {
+        left: 0;
+    }
+
+    .nav .navOpenBtn {
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .nav .navCloseBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .nav .search-box {
+        top: calc(100% + 10px);
+        max-width: calc(100% - 20px);
+        right: 50%;
+        transform: translateX(50%);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+.section3 {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    position: relative;
+    top: 25vh;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    margin: 2%;
+    border-radius: 5%;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+.details {
+    transform: translateY(0%);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover img {
+    opacity: 0.5;
+    scale: 1.1;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover .details {
+    transform: translateY(-130%);
+    transition: all 0.3s ease-in-out;
+
+}
+
+.login {
+    padding: 1% 4%;
+    background-color:  #ff0101;
+    color: white;
+    font-weight: 400;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.login:hover{
+    background-color: #020163;
+    color: #ffffff;
+}
+
+.seeMore {
+    padding: 1% 4%;
+    background-color: #ff9900;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.seeMore:hover{
+    background-color: #020163;
+    color: #ffffff;
+}
+
+.section4 {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    position: relative;
+    top: 40vh;
+}
+
+
+
+footer {
+    background-color: #121315;
+    color: #ffffff;
+    font-size: 16px;
+    position: relative;
+    top: 70vh;
+}
+
+footer * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.row {
+    padding: 2em 1em;
+}
+
+.row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: stretch;
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 15em;
+}
+
+h3 {
+    width: 100%;
+    text-align: left;
+    color: #2a8ded;
+    font-size: 1.6em;
+    white-space: nowrap;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+li:not(:first-child) {
+    margin-top: 0.8em;
+}
+
+ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color:  #2a8ded;
+}
+
+.about p {
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+}
+
+
+
+button {
+    background-color: #2a8ded;
+    color: #ffffff;
+}
+
+div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+
+.social i:hover {
+    color: #2a8ded;
+}
+
+.row.secondary {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.row.secondary i {
+    font-size: 1.8em;
+    color: #2a8ded;
+}
+
+.row.secondary div {
+    padding: 1em 0;
+    width: 100%;
+}
+
+.row.secondary div:hover {
+    background-color: #25262e;
+}
+
+.copyright {
+    padding: 0.3em 1em;
+    background-color: #25262e;
+}
+
+.copyright p {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+    .row.primary {
+        grid-template-columns: 1fr;
+    }
+
+    .row.secondary {
+        flex-direction: column;
+    }
+}
